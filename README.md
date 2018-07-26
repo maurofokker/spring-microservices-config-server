@@ -1,4 +1,5 @@
 # Config Server
+* [microservices demo starts here](https://github.com/maurofokker/microservices-demo)
 
 * a centralized git or svn folder/project should be created with all services configurations
   * `mkdir configuration && cd configuration && git init`
