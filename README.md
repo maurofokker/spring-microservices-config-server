@@ -27,10 +27,11 @@ s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{name}/{profile}/**],metho
 also it can be retrieved as json `http://localhost:8888/config-client-development.json`
 
 * encryption of properties with cloud config server
+  this will allow to the config server to pull encrypted values from configuration repository (git)
   * download [Java Cryptography Extension](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html)
   * copy downloaded files `local_policy.jar` and `US_export_policy.jar` to local `jre` folder (i.e. `C:\Program Files\Java\jre1.8.0_161\lib\security`)
   make sure to backup existing files
-  * in `application.properties` or `application.yml` add property `encrypt.key` with a secret key value
+  * in `application.properties` or `application.yml` add symmetrical (shared) key property `encrypt.key` with a secret key value
     * to [generate key](https://patrickgrimard.io/2016/03/04/encrypting-and-decrypting-configuration-property-values-in-spring-cloud/)
     * due to a problem with simmetric key (_No key was installed for encryption service_ after call _/encrypt_ endpoint) `encrypt.key` property
     must go in a `bootstrap.properties` file in `resources`
